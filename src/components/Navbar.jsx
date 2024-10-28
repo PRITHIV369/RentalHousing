@@ -18,10 +18,12 @@
 //     </header>
 //   );
 // }
-import { Link } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 
 export default function Navbar() {
   return (
+    <>
+    
     <header className="bg-purple-600 text-white p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold">MyApp</Link>
@@ -33,6 +35,8 @@ export default function Navbar() {
         </nav>
       </div>
     </header>
+    <Outlet/>
+    </>
   );
 }
 
