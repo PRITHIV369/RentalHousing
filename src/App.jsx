@@ -3,9 +3,11 @@ import Filter from './components/Filter'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Card from './components/Card'
+import Contact from './components/contact'
 function App() {
   return (
     <>
+    <Contact/>
      {/* <BrowserRouter>
      <Routes>
           <Route path="/" element={<Navbar/>}>
@@ -16,7 +18,7 @@ function App() {
     
           </Route>
       </Routes> */}
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    {/* <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <Card
         title="Sample Product"
         description="This is a sample description for the card component. It demonstrates using props in React."
@@ -24,7 +26,7 @@ function App() {
         buttonText="Buy Now"
         onClick="ok"
       />
-    </div>
+    </div> */}
     {/* </BrowserRouter>  */}
     </>
   )
