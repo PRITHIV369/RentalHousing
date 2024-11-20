@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+    const navigate=useNavigate();
     return (
         <>
         <div className='h-screen flex justify-center items-center font-popins bg-violet-100'>
@@ -24,7 +26,7 @@ function Login() {
                         </div>
                         <button className="bg-violet-600 text-white rounded-sm p-2 w-full ">Submit</button>
                         <p className='text-center text-xs py-3 '>-----or------</p>
-                        <button className="border-black border rounded-sm p-2 w-full">Sign up with Google</button>
+                        <button type="button" className="border-black border rounded-sm p-2 w-full" onClick={()=>navigate("/SignUp")} >Sign up with Google</button>
                     
                     </form>
                 </div>
