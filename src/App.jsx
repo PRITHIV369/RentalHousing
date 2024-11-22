@@ -4,10 +4,11 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Card from './components/Card'
 import Contact from './components/contact'
+import About from './components/about'
 function App() {
   return (
     <>
-    <Contact/>
+    <About/>
      {/* <BrowserRouter>
      <Routes>
           <Route path="/" element={<Navbar/>}>
