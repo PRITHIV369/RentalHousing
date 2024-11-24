@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Filter = () => {
   const [price, setPrice] = useState(1000);
+  const [location, setLocation] = useState('');
+  const [propertyType, setPropertyType] = useState('');
+  const [furnishingStatus, setFurnishingStatus] = useState('');
 
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
+  const navigate = useNavigate();
+
+  const handleApply = () => {
+    // Navigate to the results page with filter criteria as state
+    navigate('/filter-results', {
+      state: {
+        filterCriteria: { location, price, propertyType, furnishingStatus },
+      },
+    });
   };
 
   return (
@@ -13,8 +24,12 @@ const Filter = () => {
       <div className="relative w-40">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
         >
-          <option value="" disabled>Location</option>
+          <option value="" disabled>
+            Location
+          </option>
           <option value="coimbatore">Coimbatore</option>
           <option value="chennai">Chennai</option>
           <option value="hydrabad">Hyderabad</option>
@@ -30,23 +45,31 @@ const Filter = () => {
           </svg>
         </div>
       </div>
+
+      {/* Price Range Slider */}
       <div className="flex items-center space-x-2">
-        <label className="text-gray-700">Price: ₹{price}</label>
+        <label className="text-gray-700">Price Range: ₹{price}</label>
         <input
           type="range"
           min="1000"
           max="9000"
           step="1000"
           value={price}
-          onChange={handlePriceChange}
+          onChange={(e) => setPrice(e.target.value)}
           className="w-32 h-2 bg-violet-300 rounded-lg cursor-pointer accent-violet-500"
         />
       </div>
+
+      {/* Property Type Dropdown */}
       <div className="relative w-48">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
+          value={propertyType}
+          onChange={(e) => setPropertyType(e.target.value)}
         >
-          <option value="" disabled>Property Type</option>
+          <option value="" disabled>
+            Property Type
+          </option>
           <option value="apartment">Apartment</option>
           <option value="villa">Villa</option>
           <option value="independent-house">Independent House</option>
@@ -66,13 +89,16 @@ const Filter = () => {
       <div className="relative w-48">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
+          value={furnishingStatus}
+          onChange={(e) => setFurnishingStatus(e.target.value)}
         >
-          <option value="" disabled>Furnishing Status</option>
+          <option value="" disabled>
+            Furnishing Status
+          </option>
           <option value="furnished">Furnished</option>
           <option value="semi-furnished">Semi-Furnished</option>
           <option value="unfurnished">Unfurnished</option>
         </select>
-        {/* Custom caret icon */}
         <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
           <svg
             className="w-4 h-4 text-violet-500"
@@ -85,7 +111,10 @@ const Filter = () => {
       </div>
 
       {/* Apply Button */}
-      <button className="p-3 text-white bg-violet-600 rounded-md hover:bg-violet-700 transition">
+      <button
+        className="p-3 text-white bg-violet-600 rounded-md hover:bg-violet-700 transition"
+        onClick={handleApply}
+      >
         Apply
       </button>
     </div>

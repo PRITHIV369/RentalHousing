@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <>
     
-    <header className="bg-purple-600 text-white p-4">
+    <header className="bg-violet-600 text-white p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold">MyApp</Link>
         <nav className="space-x-4">

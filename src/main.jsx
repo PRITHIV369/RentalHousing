@@ -17,8 +17,8 @@ import Login from './components/Login.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
  {/* Wrap App with BrowserRouter */}
-      {/* <App /> */}
-      <Login/>
+      <App /> 
+      {/* <Login/> */}
   </StrictMode>,
 );
 
