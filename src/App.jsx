@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Contact from './components/contact'
 import About from './components/about'
 import FilterResultPage from './components/FilterResult'
+import PredictRentForm from './components/PredictPrice'
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
             <Route path="services" element={<Filter/>}/>
             <Route path="contact" element={<Contact/>}/>
             <Route path="/filter-results" element={<FilterResultPage />} />
+            <Route path="/predict" element={<PredictRentForm />} />
           </Route>
       </Routes>
     </BrowserRouter>
