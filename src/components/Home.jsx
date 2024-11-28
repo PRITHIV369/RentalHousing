@@ -1,5 +1,4 @@
 import React from 'react'
-import Filter from './Filter'
 import Banner from './Banner'
 import Slider from './Slider'
 function Home() {
