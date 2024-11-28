@@ -7,7 +7,7 @@ const Slider = () => {
   useEffect(() => {
     const fetchHouses = async () => {
       try {
-        const response = await fetch("http://localhost:4000/houses");
+        const response = await fetch("https://rentalhousingserver.onrender.com/houses/");
         const data = await response.json();
         setHouses(data);
       } catch (error) {

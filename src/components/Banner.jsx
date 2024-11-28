@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate hook
+import { useNavigate } from 'react-router-dom';  
 import Filter from './Filter';
 
 const Banner = () => {
-  const navigate = useNavigate();  // Hook to navigate to different routes
+  const navigate = useNavigate();  
 
   const handleClick = () => {
-    navigate('/predict');  // Redirect to /predict when the button is clicked
+    navigate('/predict');  
   };
 
   return (
@@ -17,10 +17,8 @@ const Banner = () => {
       <div className="w-full flex justify-center">
         <Filter className="w-full max-w-md transition-transform duration-300 hover:scale-105" />
       </div>
-      
-      {/* Button at the bottom-right corner */}
       <button
-        onClick={handleClick}  // Trigger navigation on button click
+        onClick={handleClick}  
         className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-violet-500 text-white py-2 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-400 transition-all duration-300"
       >
         Predict

@@ -10,7 +10,6 @@ const Filter = () => {
   const navigate = useNavigate();
 
   const handleApply = () => {
-    // Navigate to the results page with filter criteria as state
     navigate('/filter-results', {
       state: {
         filterCriteria: { location, price, propertyType, furnishingStatus },
@@ -20,7 +19,6 @@ const Filter = () => {
 
   return (
     <div className="flex flex-wrap items-center gap-4 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-      {/* Location Dropdown */}
       <div className="relative w-40">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
@@ -45,8 +43,6 @@ const Filter = () => {
           </svg>
         </div>
       </div>
-
-      {/* Price Range Slider */}
       <div className="flex items-center space-x-2">
         <label className="text-gray-700">Price Range: ₹{price}</label>
         <input
@@ -59,8 +55,6 @@ const Filter = () => {
           className="w-32 h-2 bg-violet-300 rounded-lg cursor-pointer accent-violet-500"
         />
       </div>
-
-      {/* Property Type Dropdown */}
       <div className="relative w-48">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
@@ -84,8 +78,6 @@ const Filter = () => {
           </svg>
         </div>
       </div>
-
-      {/* Furnishing Status Dropdown */}
       <div className="relative w-48">
         <select
           className="block w-full p-3 pr-10 rounded-md border border-violet-300 text-gray-700 bg-violet-50 focus:outline-none focus:ring-2 focus:ring-violet-500 appearance-none"
@@ -109,8 +101,6 @@ const Filter = () => {
           </svg>
         </div>
       </div>
-
-      {/* Apply Button */}
       <button
         className="p-3 text-white bg-violet-600 rounded-md hover:bg-violet-700 transition"
         onClick={handleApply}
