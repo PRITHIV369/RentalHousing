@@ -13,7 +13,7 @@ const FilterResultPage = () => {
 
     const fetchFilteredResults = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/filter", {
+        const response = await axios.get("https://rentalhousingserver.onrender.com/filter", {
           params: filterCriteria,
         });
         setFilteredResults(response.data);
