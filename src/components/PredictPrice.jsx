@@ -21,7 +21,7 @@ function Predict() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/predict', requestData);
+      const response = await axios.post('https://rentalhousing-ml-3.onrender.com/predict', requestData);
       setPredictedRent(response.data.predicted_rent);
       setError(null);
     } catch (err) {

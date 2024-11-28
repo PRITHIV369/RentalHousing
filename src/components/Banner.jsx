@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';  
 import Filter from './Filter';
+
 const Banner = () => {
   const navigate = useNavigate();  
 
   const handleClick = () => {
-    navigate('/predict');
+    navigate('/predict');  
   };
 
   return (
@@ -16,7 +17,6 @@ const Banner = () => {
       <div className="w-full flex justify-center">
         <Filter className="w-full max-w-md transition-transform duration-300 hover:scale-105" />
       </div>
-
       <button
         onClick={handleClick}  
         className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-violet-500 text-white py-2 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-400 transition-all duration-300"
