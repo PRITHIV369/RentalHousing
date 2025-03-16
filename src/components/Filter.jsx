@@ -10,12 +10,15 @@ const Filter = () => {
   const navigate = useNavigate();
 
   const handleApply = () => {
-    navigate('/filter-results', {
-      state: {
-        filterCriteria: { location, price, propertyType, furnishingStatus },
-      },
-    });
+    const criteria = {};
+    if (location) criteria.location = location;
+    if (price) criteria.price = price;
+    if (propertyType) criteria.propertyType = propertyType;
+    if (furnishingStatus) criteria.furnishingStatus = furnishingStatus;
+  
+    navigate('/filter-results', { state: { filterCriteria: criteria } });
   };
+  
 
   return (
     <div className="flex flex-wrap items-center gap-4 p-4 bg-white rounded-lg shadow-md border border-gray-200">

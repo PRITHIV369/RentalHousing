@@ -69,7 +69,7 @@ const FilterResultPage = () => {
                 <strong>Email:</strong> {house.email}
               </p>
               <p>
-                <strong>YouTube Video:</strong>{" "}
+                <strong>Video:</strong>{" "}
                 <a
                   href={house.youtubeVideoLink}
                   target="_blank"
